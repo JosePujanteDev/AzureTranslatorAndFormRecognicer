@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
+      "Azure.AI.FormRecognizer/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.FormRecognizer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.FormRecognizer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Azure.Core/1.34.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Memory.Data": "1.0.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/net6.0/Azure.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Azure.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "BouncyCastle/1.8.9": {
         "type": "package",
         "compile": {
@@ -36,6 +75,576 @@
           "lib/itextsharp.dll": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.FileExtensions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Json/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "8.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
+          "System.Text.Json": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Physical/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
+          "Microsoft.Extensions.FileSystemGlobbing": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "ModernWpfUI/0.9.6": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/ModernWpf.Controls.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0-windows7.0/ModernWpf.dll": {
+            "related": ".Controls.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/ModernWpf.Controls.dll": {
+            "related": ".xml"
+          },
+          "lib/net5.0-windows7.0/ModernWpf.dll": {
+            "related": ".Controls.xml;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ],
+        "resource": {
+          "lib/net5.0-windows7.0/af-ZA/ModernWpf.Controls.resources.dll": {
+            "locale": "af-ZA"
+          },
+          "lib/net5.0-windows7.0/af-ZA/ModernWpf.resources.dll": {
+            "locale": "af-ZA"
+          },
+          "lib/net5.0-windows7.0/am-ET/ModernWpf.Controls.resources.dll": {
+            "locale": "am-ET"
+          },
+          "lib/net5.0-windows7.0/am-ET/ModernWpf.resources.dll": {
+            "locale": "am-ET"
+          },
+          "lib/net5.0-windows7.0/ar-SA/ModernWpf.Controls.resources.dll": {
+            "locale": "ar-SA"
+          },
+          "lib/net5.0-windows7.0/ar-SA/ModernWpf.resources.dll": {
+            "locale": "ar-SA"
+          },
+          "lib/net5.0-windows7.0/az-Latn-AZ/ModernWpf.Controls.resources.dll": {
+            "locale": "az-Latn-AZ"
+          },
+          "lib/net5.0-windows7.0/az-Latn-AZ/ModernWpf.resources.dll": {
+            "locale": "az-Latn-AZ"
+          },
+          "lib/net5.0-windows7.0/be-BY/ModernWpf.Controls.resources.dll": {
+            "locale": "be-BY"
+          },
+          "lib/net5.0-windows7.0/be-BY/ModernWpf.resources.dll": {
+            "locale": "be-BY"
+          },
+          "lib/net5.0-windows7.0/bg-BG/ModernWpf.Controls.resources.dll": {
+            "locale": "bg-BG"
+          },
+          "lib/net5.0-windows7.0/bg-BG/ModernWpf.resources.dll": {
+            "locale": "bg-BG"
+          },
+          "lib/net5.0-windows7.0/bn-BD/ModernWpf.Controls.resources.dll": {
+            "locale": "bn-BD"
+          },
+          "lib/net5.0-windows7.0/bn-BD/ModernWpf.resources.dll": {
+            "locale": "bn-BD"
+          },
+          "lib/net5.0-windows7.0/bs-Latn-BA/ModernWpf.Controls.resources.dll": {
+            "locale": "bs-Latn-BA"
+          },
+          "lib/net5.0-windows7.0/bs-Latn-BA/ModernWpf.resources.dll": {
+            "locale": "bs-Latn-BA"
+          },
+          "lib/net5.0-windows7.0/ca-ES/ModernWpf.Controls.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/net5.0-windows7.0/ca-ES/ModernWpf.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/net5.0-windows7.0/cs-CZ/ModernWpf.Controls.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net5.0-windows7.0/cs-CZ/ModernWpf.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net5.0-windows7.0/da-DK/ModernWpf.Controls.resources.dll": {
+            "locale": "da-DK"
+          },
+          "lib/net5.0-windows7.0/da-DK/ModernWpf.resources.dll": {
+            "locale": "da-DK"
+          },
+          "lib/net5.0-windows7.0/de-DE/ModernWpf.Controls.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net5.0-windows7.0/de-DE/ModernWpf.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net5.0-windows7.0/el-GR/ModernWpf.Controls.resources.dll": {
+            "locale": "el-GR"
+          },
+          "lib/net5.0-windows7.0/el-GR/ModernWpf.resources.dll": {
+            "locale": "el-GR"
+          },
+          "lib/net5.0-windows7.0/en-GB/ModernWpf.Controls.resources.dll": {
+            "locale": "en-GB"
+          },
+          "lib/net5.0-windows7.0/en-GB/ModernWpf.resources.dll": {
+            "locale": "en-GB"
+          },
+          "lib/net5.0-windows7.0/es-ES/ModernWpf.Controls.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net5.0-windows7.0/es-ES/ModernWpf.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net5.0-windows7.0/es-MX/ModernWpf.Controls.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net5.0-windows7.0/es-MX/ModernWpf.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net5.0-windows7.0/et-EE/ModernWpf.Controls.resources.dll": {
+            "locale": "et-EE"
+          },
+          "lib/net5.0-windows7.0/et-EE/ModernWpf.resources.dll": {
+            "locale": "et-EE"
+          },
+          "lib/net5.0-windows7.0/eu-ES/ModernWpf.Controls.resources.dll": {
+            "locale": "eu-ES"
+          },
+          "lib/net5.0-windows7.0/eu-ES/ModernWpf.resources.dll": {
+            "locale": "eu-ES"
+          },
+          "lib/net5.0-windows7.0/fa-IR/ModernWpf.Controls.resources.dll": {
+            "locale": "fa-IR"
+          },
+          "lib/net5.0-windows7.0/fa-IR/ModernWpf.resources.dll": {
+            "locale": "fa-IR"
+          },
+          "lib/net5.0-windows7.0/fi-FI/ModernWpf.Controls.resources.dll": {
+            "locale": "fi-FI"
+          },
+          "lib/net5.0-windows7.0/fi-FI/ModernWpf.resources.dll": {
+            "locale": "fi-FI"
+          },
+          "lib/net5.0-windows7.0/fr-CA/ModernWpf.Controls.resources.dll": {
+            "locale": "fr-CA"
+          },
+          "lib/net5.0-windows7.0/fr-CA/ModernWpf.resources.dll": {
+            "locale": "fr-CA"
+          },
+          "lib/net5.0-windows7.0/fr-FR/ModernWpf.Controls.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net5.0-windows7.0/fr-FR/ModernWpf.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net5.0-windows7.0/gl-ES/ModernWpf.Controls.resources.dll": {
+            "locale": "gl-ES"
+          },
+          "lib/net5.0-windows7.0/gl-ES/ModernWpf.resources.dll": {
+            "locale": "gl-ES"
+          },
+          "lib/net5.0-windows7.0/he-IL/ModernWpf.Controls.resources.dll": {
+            "locale": "he-IL"
+          },
+          "lib/net5.0-windows7.0/he-IL/ModernWpf.resources.dll": {
+            "locale": "he-IL"
+          },
+          "lib/net5.0-windows7.0/hi-IN/ModernWpf.Controls.resources.dll": {
+            "locale": "hi-IN"
+          },
+          "lib/net5.0-windows7.0/hi-IN/ModernWpf.resources.dll": {
+            "locale": "hi-IN"
+          },
+          "lib/net5.0-windows7.0/hr-HR/ModernWpf.Controls.resources.dll": {
+            "locale": "hr-HR"
+          },
+          "lib/net5.0-windows7.0/hr-HR/ModernWpf.resources.dll": {
+            "locale": "hr-HR"
+          },
+          "lib/net5.0-windows7.0/hu-HU/ModernWpf.Controls.resources.dll": {
+            "locale": "hu-HU"
+          },
+          "lib/net5.0-windows7.0/hu-HU/ModernWpf.resources.dll": {
+            "locale": "hu-HU"
+          },
+          "lib/net5.0-windows7.0/id-ID/ModernWpf.Controls.resources.dll": {
+            "locale": "id-ID"
+          },
+          "lib/net5.0-windows7.0/id-ID/ModernWpf.resources.dll": {
+            "locale": "id-ID"
+          },
+          "lib/net5.0-windows7.0/is-IS/ModernWpf.Controls.resources.dll": {
+            "locale": "is-IS"
+          },
+          "lib/net5.0-windows7.0/is-IS/ModernWpf.resources.dll": {
+            "locale": "is-IS"
+          },
+          "lib/net5.0-windows7.0/it-IT/ModernWpf.Controls.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net5.0-windows7.0/it-IT/ModernWpf.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net5.0-windows7.0/ja-JP/ModernWpf.Controls.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net5.0-windows7.0/ja-JP/ModernWpf.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net5.0-windows7.0/ka-GE/ModernWpf.Controls.resources.dll": {
+            "locale": "ka-GE"
+          },
+          "lib/net5.0-windows7.0/ka-GE/ModernWpf.resources.dll": {
+            "locale": "ka-GE"
+          },
+          "lib/net5.0-windows7.0/kk-KZ/ModernWpf.Controls.resources.dll": {
+            "locale": "kk-KZ"
+          },
+          "lib/net5.0-windows7.0/kk-KZ/ModernWpf.resources.dll": {
+            "locale": "kk-KZ"
+          },
+          "lib/net5.0-windows7.0/km-KH/ModernWpf.Controls.resources.dll": {
+            "locale": "km-KH"
+          },
+          "lib/net5.0-windows7.0/km-KH/ModernWpf.resources.dll": {
+            "locale": "km-KH"
+          },
+          "lib/net5.0-windows7.0/kn-IN/ModernWpf.Controls.resources.dll": {
+            "locale": "kn-IN"
+          },
+          "lib/net5.0-windows7.0/kn-IN/ModernWpf.resources.dll": {
+            "locale": "kn-IN"
+          },
+          "lib/net5.0-windows7.0/ko-KR/ModernWpf.Controls.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net5.0-windows7.0/ko-KR/ModernWpf.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net5.0-windows7.0/lo-LA/ModernWpf.Controls.resources.dll": {
+            "locale": "lo-LA"
+          },
+          "lib/net5.0-windows7.0/lo-LA/ModernWpf.resources.dll": {
+            "locale": "lo-LA"
+          },
+          "lib/net5.0-windows7.0/lt-LT/ModernWpf.Controls.resources.dll": {
+            "locale": "lt-LT"
+          },
+          "lib/net5.0-windows7.0/lt-LT/ModernWpf.resources.dll": {
+            "locale": "lt-LT"
+          },
+          "lib/net5.0-windows7.0/lv-LV/ModernWpf.Controls.resources.dll": {
+            "locale": "lv-LV"
+          },
+          "lib/net5.0-windows7.0/lv-LV/ModernWpf.resources.dll": {
+            "locale": "lv-LV"
+          },
+          "lib/net5.0-windows7.0/mk-MK/ModernWpf.Controls.resources.dll": {
+            "locale": "mk-MK"
+          },
+          "lib/net5.0-windows7.0/mk-MK/ModernWpf.resources.dll": {
+            "locale": "mk-MK"
+          },
+          "lib/net5.0-windows7.0/ml-IN/ModernWpf.Controls.resources.dll": {
+            "locale": "ml-IN"
+          },
+          "lib/net5.0-windows7.0/ml-IN/ModernWpf.resources.dll": {
+            "locale": "ml-IN"
+          },
+          "lib/net5.0-windows7.0/ms-MY/ModernWpf.Controls.resources.dll": {
+            "locale": "ms-MY"
+          },
+          "lib/net5.0-windows7.0/ms-MY/ModernWpf.resources.dll": {
+            "locale": "ms-MY"
+          },
+          "lib/net5.0-windows7.0/nb-NO/ModernWpf.Controls.resources.dll": {
+            "locale": "nb-NO"
+          },
+          "lib/net5.0-windows7.0/nb-NO/ModernWpf.resources.dll": {
+            "locale": "nb-NO"
+          },
+          "lib/net5.0-windows7.0/nl-NL/ModernWpf.Controls.resources.dll": {
+            "locale": "nl-NL"
+          },
+          "lib/net5.0-windows7.0/nl-NL/ModernWpf.resources.dll": {
+            "locale": "nl-NL"
+          },
+          "lib/net5.0-windows7.0/nn-NO/ModernWpf.Controls.resources.dll": {
+            "locale": "nn-NO"
+          },
+          "lib/net5.0-windows7.0/nn-NO/ModernWpf.resources.dll": {
+            "locale": "nn-NO"
+          },
+          "lib/net5.0-windows7.0/pl-PL/ModernWpf.Controls.resources.dll": {
+            "locale": "pl-PL"
+          },
+          "lib/net5.0-windows7.0/pl-PL/ModernWpf.resources.dll": {
+            "locale": "pl-PL"
+          },
+          "lib/net5.0-windows7.0/pt-BR/ModernWpf.Controls.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net5.0-windows7.0/pt-BR/ModernWpf.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net5.0-windows7.0/pt-PT/ModernWpf.Controls.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/net5.0-windows7.0/pt-PT/ModernWpf.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/net5.0-windows7.0/ro-RO/ModernWpf.Controls.resources.dll": {
+            "locale": "ro-RO"
+          },
+          "lib/net5.0-windows7.0/ro-RO/ModernWpf.resources.dll": {
+            "locale": "ro-RO"
+          },
+          "lib/net5.0-windows7.0/ru-RU/ModernWpf.Controls.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net5.0-windows7.0/ru-RU/ModernWpf.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net5.0-windows7.0/sk-SK/ModernWpf.Controls.resources.dll": {
+            "locale": "sk-SK"
+          },
+          "lib/net5.0-windows7.0/sk-SK/ModernWpf.resources.dll": {
+            "locale": "sk-SK"
+          },
+          "lib/net5.0-windows7.0/sl-SI/ModernWpf.Controls.resources.dll": {
+            "locale": "sl-SI"
+          },
+          "lib/net5.0-windows7.0/sl-SI/ModernWpf.resources.dll": {
+            "locale": "sl-SI"
+          },
+          "lib/net5.0-windows7.0/sq-AL/ModernWpf.Controls.resources.dll": {
+            "locale": "sq-AL"
+          },
+          "lib/net5.0-windows7.0/sq-AL/ModernWpf.resources.dll": {
+            "locale": "sq-AL"
+          },
+          "lib/net5.0-windows7.0/sr-Latn-RS/ModernWpf.Controls.resources.dll": {
+            "locale": "sr-Latn-RS"
+          },
+          "lib/net5.0-windows7.0/sr-Latn-RS/ModernWpf.resources.dll": {
+            "locale": "sr-Latn-RS"
+          },
+          "lib/net5.0-windows7.0/sv-SE/ModernWpf.Controls.resources.dll": {
+            "locale": "sv-SE"
+          },
+          "lib/net5.0-windows7.0/sv-SE/ModernWpf.resources.dll": {
+            "locale": "sv-SE"
+          },
+          "lib/net5.0-windows7.0/sw-KE/ModernWpf.Controls.resources.dll": {
+            "locale": "sw-KE"
+          },
+          "lib/net5.0-windows7.0/sw-KE/ModernWpf.resources.dll": {
+            "locale": "sw-KE"
+          },
+          "lib/net5.0-windows7.0/ta-IN/ModernWpf.Controls.resources.dll": {
+            "locale": "ta-IN"
+          },
+          "lib/net5.0-windows7.0/ta-IN/ModernWpf.resources.dll": {
+            "locale": "ta-IN"
+          },
+          "lib/net5.0-windows7.0/te-IN/ModernWpf.Controls.resources.dll": {
+            "locale": "te-IN"
+          },
+          "lib/net5.0-windows7.0/te-IN/ModernWpf.resources.dll": {
+            "locale": "te-IN"
+          },
+          "lib/net5.0-windows7.0/th-TH/ModernWpf.Controls.resources.dll": {
+            "locale": "th-TH"
+          },
+          "lib/net5.0-windows7.0/th-TH/ModernWpf.resources.dll": {
+            "locale": "th-TH"
+          },
+          "lib/net5.0-windows7.0/tr-TR/ModernWpf.Controls.resources.dll": {
+            "locale": "tr-TR"
+          },
+          "lib/net5.0-windows7.0/tr-TR/ModernWpf.resources.dll": {
+            "locale": "tr-TR"
+          },
+          "lib/net5.0-windows7.0/uk-UA/ModernWpf.Controls.resources.dll": {
+            "locale": "uk-UA"
+          },
+          "lib/net5.0-windows7.0/uk-UA/ModernWpf.resources.dll": {
+            "locale": "uk-UA"
+          },
+          "lib/net5.0-windows7.0/uz-Latn-UZ/ModernWpf.Controls.resources.dll": {
+            "locale": "uz-Latn-UZ"
+          },
+          "lib/net5.0-windows7.0/uz-Latn-UZ/ModernWpf.resources.dll": {
+            "locale": "uz-Latn-UZ"
+          },
+          "lib/net5.0-windows7.0/vi-VN/ModernWpf.Controls.resources.dll": {
+            "locale": "vi-VN"
+          },
+          "lib/net5.0-windows7.0/vi-VN/ModernWpf.resources.dll": {
+            "locale": "vi-VN"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -48,10 +657,161 @@
             "related": ".xml"
           }
         }
+      },
+      "System.Diagnostics.DiagnosticSource/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Memory.Data/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Encodings.Web/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/System.Text.Json.targets": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
       }
     }
   },
   "libraries": {
+    "Azure.AI.FormRecognizer/4.1.0": {
+      "sha512": "R9mEeYFa2+EcCu5dOGOFG07nbELHY/2o6JtgJoxNTo2wtsonLnLwcKzX/sxOnYhpib4TJEBTUX0/ea0lL130Iw==",
+      "type": "package",
+      "path": "azure.ai.formrecognizer/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.ai.formrecognizer.4.1.0.nupkg.sha512",
+        "azure.ai.formrecognizer.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.AI.FormRecognizer.dll",
+        "lib/netstandard2.0/Azure.AI.FormRecognizer.xml"
+      ]
+    },
+    "Azure.Core/1.34.0": {
+      "sha512": "6dNpM8OlGO+5gvt97tHXBp9qWRFkimRFulupDSGRgyT3sje1kQNza1/EMYaDcolmNARPmVJo8+wgD6ReV9wG5Q==",
+      "type": "package",
+      "path": "azure.core/1.34.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.core.1.34.0.nupkg.sha512",
+        "azure.core.nuspec",
+        "azureicon.png",
+        "lib/net461/Azure.Core.dll",
+        "lib/net461/Azure.Core.xml",
+        "lib/net5.0/Azure.Core.dll",
+        "lib/net5.0/Azure.Core.xml",
+        "lib/net6.0/Azure.Core.dll",
+        "lib/net6.0/Azure.Core.xml",
+        "lib/netcoreapp2.1/Azure.Core.dll",
+        "lib/netcoreapp2.1/Azure.Core.xml",
+        "lib/netstandard2.0/Azure.Core.dll",
+        "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
     "BouncyCastle/1.8.9": {
       "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
       "type": "package",
@@ -109,6 +869,811 @@
         "notice.txt"
       ]
     },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration/8.0.0": {
+      "sha512": "0J/9YNXTMWSZP2p2+nvl8p71zpSwokZXZuJW+VjdErkegAnFdO1XlqtA62SJtgVYHdKu3uPxJHcMR/r35HwFBA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
+        "microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/8.0.0": {
+      "sha512": "3lE/iLSutpgX1CC0NOW70FJoGARRHbyKmG7dc0klnUZ9Dd9hS6N/POPWhKhMLCEuNN5nXEY5agmlFtH562vqhQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.FileExtensions/8.0.0": {
+      "sha512": "McP+Lz/EKwvtCv48z0YImw+L1gi1gy5rHhNaNIY2CrjloV+XY8gydT8DjMR6zWeL13AFK+DioVpppwAuO1Gi1w==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.fileextensions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.FileExtensions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.FileExtensions.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "microsoft.extensions.configuration.fileextensions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.fileextensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Json/8.0.0": {
+      "sha512": "C2wqUoh9OmRL1akaCcKSTmRU8z0kckfImG7zLNI8uyi47Lp+zd5LWAD17waPQEqCz3ioWOCrFUo+JJuoeZLOBw==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.json/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Json.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Json.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.xml",
+        "microsoft.extensions.configuration.json.8.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
+      "sha512": "ZbaMlhJlpisjuWbvXr4LdAst/1XxH3vZ6A0BsgTphZ2L4PGuxRLz7Jr/S7mkAAnOn78Vu0fKhEgNF5JO3zfjqQ==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Physical/8.0.0": {
+      "sha512": "UboiXxpPUpwulHvIAVE36Knq0VSHaAmfrFkegLyBZeaADuKezJ/AIXYAW8F5GBlGk/VaibN2k/Zn1ca8YAfVdA==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.physical/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.FileProviders.Physical.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Physical.targets",
+        "lib/net462/Microsoft.Extensions.FileProviders.Physical.dll",
+        "lib/net462/Microsoft.Extensions.FileProviders.Physical.xml",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Physical.xml",
+        "lib/net7.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "lib/net7.0/Microsoft.Extensions.FileProviders.Physical.xml",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.xml",
+        "microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
+        "microsoft.extensions.fileproviders.physical.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/8.0.0": {
+      "sha512": "OK+670i7esqlQrPjdIKRbsyMCe9g5kSLpRRQGSr4Q58AOYEe/hCnfLZprh7viNisSUUQZmMrbbuDaIrP+V1ebQ==",
+      "type": "package",
+      "path": "microsoft.extensions.filesystemglobbing/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.FileSystemGlobbing.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileSystemGlobbing.targets",
+        "lib/net462/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/net462/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "lib/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/net6.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "lib/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/net7.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.xml",
+        "microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
+        "microsoft.extensions.filesystemglobbing.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/8.0.0": {
+      "sha512": "bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
+        "lib/net462/Microsoft.Extensions.Primitives.dll",
+        "lib/net462/Microsoft.Extensions.Primitives.xml",
+        "lib/net6.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net6.0/Microsoft.Extensions.Primitives.xml",
+        "lib/net7.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net7.0/Microsoft.Extensions.Primitives.xml",
+        "lib/net8.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net8.0/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "ModernWpfUI/0.9.6": {
+      "sha512": "eWe90HciyudQQtZVbZ9QFssS74BwK69W7cBd52AEZHmrsS4hrSA+/BpUbAFWzzFDH6FBE1xsHPiRC+wHS7xgJw==",
+      "type": "package",
+      "path": "modernwpfui/0.9.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/ModernWpf.Controls.dll",
+        "lib/net45/ModernWpf.Controls.xml",
+        "lib/net45/ModernWpf.dll",
+        "lib/net45/ModernWpf.xml",
+        "lib/net45/af-ZA/ModernWpf.Controls.resources.dll",
+        "lib/net45/af-ZA/ModernWpf.resources.dll",
+        "lib/net45/am-ET/ModernWpf.Controls.resources.dll",
+        "lib/net45/am-ET/ModernWpf.resources.dll",
+        "lib/net45/ar-SA/ModernWpf.Controls.resources.dll",
+        "lib/net45/ar-SA/ModernWpf.resources.dll",
+        "lib/net45/az-Latn-AZ/ModernWpf.Controls.resources.dll",
+        "lib/net45/az-Latn-AZ/ModernWpf.resources.dll",
+        "lib/net45/be-BY/ModernWpf.Controls.resources.dll",
+        "lib/net45/be-BY/ModernWpf.resources.dll",
+        "lib/net45/bg-BG/ModernWpf.Controls.resources.dll",
+        "lib/net45/bg-BG/ModernWpf.resources.dll",
+        "lib/net45/bn-BD/ModernWpf.Controls.resources.dll",
+        "lib/net45/bn-BD/ModernWpf.resources.dll",
+        "lib/net45/bs-Latn-BA/ModernWpf.Controls.resources.dll",
+        "lib/net45/bs-Latn-BA/ModernWpf.resources.dll",
+        "lib/net45/ca-ES/ModernWpf.Controls.resources.dll",
+        "lib/net45/ca-ES/ModernWpf.resources.dll",
+        "lib/net45/cs-CZ/ModernWpf.Controls.resources.dll",
+        "lib/net45/cs-CZ/ModernWpf.resources.dll",
+        "lib/net45/da-DK/ModernWpf.Controls.resources.dll",
+        "lib/net45/da-DK/ModernWpf.resources.dll",
+        "lib/net45/de-DE/ModernWpf.Controls.resources.dll",
+        "lib/net45/de-DE/ModernWpf.resources.dll",
+        "lib/net45/el-GR/ModernWpf.Controls.resources.dll",
+        "lib/net45/el-GR/ModernWpf.resources.dll",
+        "lib/net45/en-GB/ModernWpf.Controls.resources.dll",
+        "lib/net45/en-GB/ModernWpf.resources.dll",
+        "lib/net45/es-ES/ModernWpf.Controls.resources.dll",
+        "lib/net45/es-ES/ModernWpf.resources.dll",
+        "lib/net45/es-MX/ModernWpf.Controls.resources.dll",
+        "lib/net45/es-MX/ModernWpf.resources.dll",
+        "lib/net45/et-EE/ModernWpf.Controls.resources.dll",
+        "lib/net45/et-EE/ModernWpf.resources.dll",
+        "lib/net45/eu-ES/ModernWpf.Controls.resources.dll",
+        "lib/net45/eu-ES/ModernWpf.resources.dll",
+        "lib/net45/fa-IR/ModernWpf.Controls.resources.dll",
+        "lib/net45/fa-IR/ModernWpf.resources.dll",
+        "lib/net45/fi-FI/ModernWpf.Controls.resources.dll",
+        "lib/net45/fi-FI/ModernWpf.resources.dll",
+        "lib/net45/fil-PH/ModernWpf.Controls.resources.dll",
+        "lib/net45/fil-PH/ModernWpf.resources.dll",
+        "lib/net45/fr-CA/ModernWpf.Controls.resources.dll",
+        "lib/net45/fr-CA/ModernWpf.resources.dll",
+        "lib/net45/fr-FR/ModernWpf.Controls.resources.dll",
+        "lib/net45/fr-FR/ModernWpf.resources.dll",
+        "lib/net45/gl-ES/ModernWpf.Controls.resources.dll",
+        "lib/net45/gl-ES/ModernWpf.resources.dll",
+        "lib/net45/he-IL/ModernWpf.Controls.resources.dll",
+        "lib/net45/he-IL/ModernWpf.resources.dll",
+        "lib/net45/hi-IN/ModernWpf.Controls.resources.dll",
+        "lib/net45/hi-IN/ModernWpf.resources.dll",
+        "lib/net45/hr-HR/ModernWpf.Controls.resources.dll",
+        "lib/net45/hr-HR/ModernWpf.resources.dll",
+        "lib/net45/hu-HU/ModernWpf.Controls.resources.dll",
+        "lib/net45/hu-HU/ModernWpf.resources.dll",
+        "lib/net45/id-ID/ModernWpf.Controls.resources.dll",
+        "lib/net45/id-ID/ModernWpf.resources.dll",
+        "lib/net45/is-IS/ModernWpf.Controls.resources.dll",
+        "lib/net45/is-IS/ModernWpf.resources.dll",
+        "lib/net45/it-IT/ModernWpf.Controls.resources.dll",
+        "lib/net45/it-IT/ModernWpf.resources.dll",
+        "lib/net45/ja-JP/ModernWpf.Controls.resources.dll",
+        "lib/net45/ja-JP/ModernWpf.resources.dll",
+        "lib/net45/ka-GE/ModernWpf.Controls.resources.dll",
+        "lib/net45/ka-GE/ModernWpf.resources.dll",
+        "lib/net45/kk-KZ/ModernWpf.Controls.resources.dll",
+        "lib/net45/kk-KZ/ModernWpf.resources.dll",
+        "lib/net45/km-KH/ModernWpf.Controls.resources.dll",
+        "lib/net45/km-KH/ModernWpf.resources.dll",
+        "lib/net45/kn-IN/ModernWpf.Controls.resources.dll",
+        "lib/net45/kn-IN/ModernWpf.resources.dll",
+        "lib/net45/ko-KR/ModernWpf.Controls.resources.dll",
+        "lib/net45/ko-KR/ModernWpf.resources.dll",
+        "lib/net45/lo-LA/ModernWpf.Controls.resources.dll",
+        "lib/net45/lo-LA/ModernWpf.resources.dll",
+        "lib/net45/lt-LT/ModernWpf.Controls.resources.dll",
+        "lib/net45/lt-LT/ModernWpf.resources.dll",
+        "lib/net45/lv-LV/ModernWpf.Controls.resources.dll",
+        "lib/net45/lv-LV/ModernWpf.resources.dll",
+        "lib/net45/mk-MK/ModernWpf.Controls.resources.dll",
+        "lib/net45/mk-MK/ModernWpf.resources.dll",
+        "lib/net45/ml-IN/ModernWpf.Controls.resources.dll",
+        "lib/net45/ml-IN/ModernWpf.resources.dll",
+        "lib/net45/ms-MY/ModernWpf.Controls.resources.dll",
+        "lib/net45/ms-MY/ModernWpf.resources.dll",
+        "lib/net45/nb-NO/ModernWpf.Controls.resources.dll",
+        "lib/net45/nb-NO/ModernWpf.resources.dll",
+        "lib/net45/nl-NL/ModernWpf.Controls.resources.dll",
+        "lib/net45/nl-NL/ModernWpf.resources.dll",
+        "lib/net45/nn-NO/ModernWpf.Controls.resources.dll",
+        "lib/net45/nn-NO/ModernWpf.resources.dll",
+        "lib/net45/pl-PL/ModernWpf.Controls.resources.dll",
+        "lib/net45/pl-PL/ModernWpf.resources.dll",
+        "lib/net45/pt-BR/ModernWpf.Controls.resources.dll",
+        "lib/net45/pt-BR/ModernWpf.resources.dll",
+        "lib/net45/pt-PT/ModernWpf.Controls.resources.dll",
+        "lib/net45/pt-PT/ModernWpf.resources.dll",
+        "lib/net45/ro-RO/ModernWpf.Controls.resources.dll",
+        "lib/net45/ro-RO/ModernWpf.resources.dll",
+        "lib/net45/ru-RU/ModernWpf.Controls.resources.dll",
+        "lib/net45/ru-RU/ModernWpf.resources.dll",
+        "lib/net45/sk-SK/ModernWpf.Controls.resources.dll",
+        "lib/net45/sk-SK/ModernWpf.resources.dll",
+        "lib/net45/sl-SI/ModernWpf.Controls.resources.dll",
+        "lib/net45/sl-SI/ModernWpf.resources.dll",
+        "lib/net45/sq-AL/ModernWpf.Controls.resources.dll",
+        "lib/net45/sq-AL/ModernWpf.resources.dll",
+        "lib/net45/sr-Latn-RS/ModernWpf.Controls.resources.dll",
+        "lib/net45/sr-Latn-RS/ModernWpf.resources.dll",
+        "lib/net45/sv-SE/ModernWpf.Controls.resources.dll",
+        "lib/net45/sv-SE/ModernWpf.resources.dll",
+        "lib/net45/sw-KE/ModernWpf.Controls.resources.dll",
+        "lib/net45/sw-KE/ModernWpf.resources.dll",
+        "lib/net45/ta-IN/ModernWpf.Controls.resources.dll",
+        "lib/net45/ta-IN/ModernWpf.resources.dll",
+        "lib/net45/te-IN/ModernWpf.Controls.resources.dll",
+        "lib/net45/te-IN/ModernWpf.resources.dll",
+        "lib/net45/th-TH/ModernWpf.Controls.resources.dll",
+        "lib/net45/th-TH/ModernWpf.resources.dll",
+        "lib/net45/tr-TR/ModernWpf.Controls.resources.dll",
+        "lib/net45/tr-TR/ModernWpf.resources.dll",
+        "lib/net45/uk-UA/ModernWpf.Controls.resources.dll",
+        "lib/net45/uk-UA/ModernWpf.resources.dll",
+        "lib/net45/uz-Latn-UZ/ModernWpf.Controls.resources.dll",
+        "lib/net45/uz-Latn-UZ/ModernWpf.resources.dll",
+        "lib/net45/vi-VN/ModernWpf.Controls.resources.dll",
+        "lib/net45/vi-VN/ModernWpf.resources.dll",
+        "lib/net462/ModernWpf.Controls.dll",
+        "lib/net462/ModernWpf.Controls.xml",
+        "lib/net462/ModernWpf.dll",
+        "lib/net462/ModernWpf.xml",
+        "lib/net462/af-ZA/ModernWpf.Controls.resources.dll",
+        "lib/net462/af-ZA/ModernWpf.resources.dll",
+        "lib/net462/am-ET/ModernWpf.Controls.resources.dll",
+        "lib/net462/am-ET/ModernWpf.resources.dll",
+        "lib/net462/ar-SA/ModernWpf.Controls.resources.dll",
+        "lib/net462/ar-SA/ModernWpf.resources.dll",
+        "lib/net462/az-Latn-AZ/ModernWpf.Controls.resources.dll",
+        "lib/net462/az-Latn-AZ/ModernWpf.resources.dll",
+        "lib/net462/be-BY/ModernWpf.Controls.resources.dll",
+        "lib/net462/be-BY/ModernWpf.resources.dll",
+        "lib/net462/bg-BG/ModernWpf.Controls.resources.dll",
+        "lib/net462/bg-BG/ModernWpf.resources.dll",
+        "lib/net462/bn-BD/ModernWpf.Controls.resources.dll",
+        "lib/net462/bn-BD/ModernWpf.resources.dll",
+        "lib/net462/bs-Latn-BA/ModernWpf.Controls.resources.dll",
+        "lib/net462/bs-Latn-BA/ModernWpf.resources.dll",
+        "lib/net462/ca-ES/ModernWpf.Controls.resources.dll",
+        "lib/net462/ca-ES/ModernWpf.resources.dll",
+        "lib/net462/cs-CZ/ModernWpf.Controls.resources.dll",
+        "lib/net462/cs-CZ/ModernWpf.resources.dll",
+        "lib/net462/da-DK/ModernWpf.Controls.resources.dll",
+        "lib/net462/da-DK/ModernWpf.resources.dll",
+        "lib/net462/de-DE/ModernWpf.Controls.resources.dll",
+        "lib/net462/de-DE/ModernWpf.resources.dll",
+        "lib/net462/el-GR/ModernWpf.Controls.resources.dll",
+        "lib/net462/el-GR/ModernWpf.resources.dll",
+        "lib/net462/en-GB/ModernWpf.Controls.resources.dll",
+        "lib/net462/en-GB/ModernWpf.resources.dll",
+        "lib/net462/es-ES/ModernWpf.Controls.resources.dll",
+        "lib/net462/es-ES/ModernWpf.resources.dll",
+        "lib/net462/es-MX/ModernWpf.Controls.resources.dll",
+        "lib/net462/es-MX/ModernWpf.resources.dll",
+        "lib/net462/et-EE/ModernWpf.Controls.resources.dll",
+        "lib/net462/et-EE/ModernWpf.resources.dll",
+        "lib/net462/eu-ES/ModernWpf.Controls.resources.dll",
+        "lib/net462/eu-ES/ModernWpf.resources.dll",
+        "lib/net462/fa-IR/ModernWpf.Controls.resources.dll",
+        "lib/net462/fa-IR/ModernWpf.resources.dll",
+        "lib/net462/fi-FI/ModernWpf.Controls.resources.dll",
+        "lib/net462/fi-FI/ModernWpf.resources.dll",
+        "lib/net462/fil-PH/ModernWpf.Controls.resources.dll",
+        "lib/net462/fil-PH/ModernWpf.resources.dll",
+        "lib/net462/fr-CA/ModernWpf.Controls.resources.dll",
+        "lib/net462/fr-CA/ModernWpf.resources.dll",
+        "lib/net462/fr-FR/ModernWpf.Controls.resources.dll",
+        "lib/net462/fr-FR/ModernWpf.resources.dll",
+        "lib/net462/gl-ES/ModernWpf.Controls.resources.dll",
+        "lib/net462/gl-ES/ModernWpf.resources.dll",
+        "lib/net462/he-IL/ModernWpf.Controls.resources.dll",
+        "lib/net462/he-IL/ModernWpf.resources.dll",
+        "lib/net462/hi-IN/ModernWpf.Controls.resources.dll",
+        "lib/net462/hi-IN/ModernWpf.resources.dll",
+        "lib/net462/hr-HR/ModernWpf.Controls.resources.dll",
+        "lib/net462/hr-HR/ModernWpf.resources.dll",
+        "lib/net462/hu-HU/ModernWpf.Controls.resources.dll",
+        "lib/net462/hu-HU/ModernWpf.resources.dll",
+        "lib/net462/id-ID/ModernWpf.Controls.resources.dll",
+        "lib/net462/id-ID/ModernWpf.resources.dll",
+        "lib/net462/is-IS/ModernWpf.Controls.resources.dll",
+        "lib/net462/is-IS/ModernWpf.resources.dll",
+        "lib/net462/it-IT/ModernWpf.Controls.resources.dll",
+        "lib/net462/it-IT/ModernWpf.resources.dll",
+        "lib/net462/ja-JP/ModernWpf.Controls.resources.dll",
+        "lib/net462/ja-JP/ModernWpf.resources.dll",
+        "lib/net462/ka-GE/ModernWpf.Controls.resources.dll",
+        "lib/net462/ka-GE/ModernWpf.resources.dll",
+        "lib/net462/kk-KZ/ModernWpf.Controls.resources.dll",
+        "lib/net462/kk-KZ/ModernWpf.resources.dll",
+        "lib/net462/km-KH/ModernWpf.Controls.resources.dll",
+        "lib/net462/km-KH/ModernWpf.resources.dll",
+        "lib/net462/kn-IN/ModernWpf.Controls.resources.dll",
+        "lib/net462/kn-IN/ModernWpf.resources.dll",
+        "lib/net462/ko-KR/ModernWpf.Controls.resources.dll",
+        "lib/net462/ko-KR/ModernWpf.resources.dll",
+        "lib/net462/lo-LA/ModernWpf.Controls.resources.dll",
+        "lib/net462/lo-LA/ModernWpf.resources.dll",
+        "lib/net462/lt-LT/ModernWpf.Controls.resources.dll",
+        "lib/net462/lt-LT/ModernWpf.resources.dll",
+        "lib/net462/lv-LV/ModernWpf.Controls.resources.dll",
+        "lib/net462/lv-LV/ModernWpf.resources.dll",
+        "lib/net462/mk-MK/ModernWpf.Controls.resources.dll",
+        "lib/net462/mk-MK/ModernWpf.resources.dll",
+        "lib/net462/ml-IN/ModernWpf.Controls.resources.dll",
+        "lib/net462/ml-IN/ModernWpf.resources.dll",
+        "lib/net462/ms-MY/ModernWpf.Controls.resources.dll",
+        "lib/net462/ms-MY/ModernWpf.resources.dll",
+        "lib/net462/nb-NO/ModernWpf.Controls.resources.dll",
+        "lib/net462/nb-NO/ModernWpf.resources.dll",
+        "lib/net462/nl-NL/ModernWpf.Controls.resources.dll",
+        "lib/net462/nl-NL/ModernWpf.resources.dll",
+        "lib/net462/nn-NO/ModernWpf.Controls.resources.dll",
+        "lib/net462/nn-NO/ModernWpf.resources.dll",
+        "lib/net462/pl-PL/ModernWpf.Controls.resources.dll",
+        "lib/net462/pl-PL/ModernWpf.resources.dll",
+        "lib/net462/pt-BR/ModernWpf.Controls.resources.dll",
+        "lib/net462/pt-BR/ModernWpf.resources.dll",
+        "lib/net462/pt-PT/ModernWpf.Controls.resources.dll",
+        "lib/net462/pt-PT/ModernWpf.resources.dll",
+        "lib/net462/ro-RO/ModernWpf.Controls.resources.dll",
+        "lib/net462/ro-RO/ModernWpf.resources.dll",
+        "lib/net462/ru-RU/ModernWpf.Controls.resources.dll",
+        "lib/net462/ru-RU/ModernWpf.resources.dll",
+        "lib/net462/sk-SK/ModernWpf.Controls.resources.dll",
+        "lib/net462/sk-SK/ModernWpf.resources.dll",
+        "lib/net462/sl-SI/ModernWpf.Controls.resources.dll",
+        "lib/net462/sl-SI/ModernWpf.resources.dll",
+        "lib/net462/sq-AL/ModernWpf.Controls.resources.dll",
+        "lib/net462/sq-AL/ModernWpf.resources.dll",
+        "lib/net462/sr-Latn-RS/ModernWpf.Controls.resources.dll",
+        "lib/net462/sr-Latn-RS/ModernWpf.resources.dll",
+        "lib/net462/sv-SE/ModernWpf.Controls.resources.dll",
+        "lib/net462/sv-SE/ModernWpf.resources.dll",
+        "lib/net462/sw-KE/ModernWpf.Controls.resources.dll",
+        "lib/net462/sw-KE/ModernWpf.resources.dll",
+        "lib/net462/ta-IN/ModernWpf.Controls.resources.dll",
+        "lib/net462/ta-IN/ModernWpf.resources.dll",
+        "lib/net462/te-IN/ModernWpf.Controls.resources.dll",
+        "lib/net462/te-IN/ModernWpf.resources.dll",
+        "lib/net462/th-TH/ModernWpf.Controls.resources.dll",
+        "lib/net462/th-TH/ModernWpf.resources.dll",
+        "lib/net462/tr-TR/ModernWpf.Controls.resources.dll",
+        "lib/net462/tr-TR/ModernWpf.resources.dll",
+        "lib/net462/uk-UA/ModernWpf.Controls.resources.dll",
+        "lib/net462/uk-UA/ModernWpf.resources.dll",
+        "lib/net462/uz-Latn-UZ/ModernWpf.Controls.resources.dll",
+        "lib/net462/uz-Latn-UZ/ModernWpf.resources.dll",
+        "lib/net462/vi-VN/ModernWpf.Controls.resources.dll",
+        "lib/net462/vi-VN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ModernWpf.Controls.dll",
+        "lib/net5.0-windows7.0/ModernWpf.Controls.xml",
+        "lib/net5.0-windows7.0/ModernWpf.dll",
+        "lib/net5.0-windows7.0/ModernWpf.xml",
+        "lib/net5.0-windows7.0/af-ZA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/af-ZA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/am-ET/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/am-ET/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ar-SA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ar-SA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/az-Latn-AZ/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/az-Latn-AZ/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/be-BY/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/be-BY/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/bg-BG/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/bg-BG/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/bn-BD/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/bn-BD/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/bs-Latn-BA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/bs-Latn-BA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ca-ES/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ca-ES/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/cs-CZ/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/cs-CZ/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/da-DK/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/da-DK/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/de-DE/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/de-DE/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/el-GR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/el-GR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/en-GB/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/en-GB/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/es-ES/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/es-ES/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/es-MX/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/et-EE/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/et-EE/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/eu-ES/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/eu-ES/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/fa-IR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/fa-IR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/fi-FI/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/fi-FI/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/fil-PH/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/fil-PH/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/fr-CA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/fr-CA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/fr-FR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/fr-FR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/gl-ES/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/gl-ES/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/he-IL/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/he-IL/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/hi-IN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/hi-IN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/hr-HR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/hr-HR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/hu-HU/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/hu-HU/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/id-ID/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/id-ID/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/is-IS/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/is-IS/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/it-IT/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/it-IT/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ja-JP/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ja-JP/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ka-GE/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ka-GE/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/kk-KZ/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/kk-KZ/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/km-KH/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/km-KH/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/kn-IN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/kn-IN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ko-KR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ko-KR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/lo-LA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/lo-LA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/lt-LT/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/lt-LT/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/lv-LV/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/lv-LV/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/mk-MK/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/mk-MK/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ml-IN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ml-IN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ms-MY/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ms-MY/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/nb-NO/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/nb-NO/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/nl-NL/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/nl-NL/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/nn-NO/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/nn-NO/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/pl-PL/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/pl-PL/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/pt-BR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/pt-PT/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/pt-PT/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ro-RO/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ro-RO/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ru-RU/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ru-RU/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sk-SK/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sk-SK/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sl-SI/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sl-SI/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sq-AL/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sq-AL/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sr-Latn-RS/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sr-Latn-RS/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sv-SE/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sv-SE/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/sw-KE/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/sw-KE/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/ta-IN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/ta-IN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/te-IN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/te-IN/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/th-TH/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/th-TH/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/tr-TR/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/tr-TR/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/uk-UA/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/uk-UA/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/uz-Latn-UZ/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/uz-Latn-UZ/ModernWpf.resources.dll",
+        "lib/net5.0-windows7.0/vi-VN/ModernWpf.Controls.resources.dll",
+        "lib/net5.0-windows7.0/vi-VN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ModernWpf.Controls.dll",
+        "lib/netcoreapp3.0/ModernWpf.Controls.xml",
+        "lib/netcoreapp3.0/ModernWpf.dll",
+        "lib/netcoreapp3.0/ModernWpf.xml",
+        "lib/netcoreapp3.0/af-ZA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/af-ZA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/am-ET/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/am-ET/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ar-SA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ar-SA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/az-Latn-AZ/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/az-Latn-AZ/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/be-BY/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/be-BY/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/bg-BG/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/bg-BG/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/bn-BD/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/bn-BD/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/bs-Latn-BA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/bs-Latn-BA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ca-ES/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ca-ES/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/cs-CZ/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/cs-CZ/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/da-DK/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/da-DK/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/de-DE/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/de-DE/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/el-GR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/el-GR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/en-GB/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/en-GB/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/es-ES/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/es-ES/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/es-MX/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/es-MX/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/et-EE/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/et-EE/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/eu-ES/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/eu-ES/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/fa-IR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/fa-IR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/fi-FI/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/fi-FI/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/fil-PH/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/fil-PH/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/fr-CA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/fr-CA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/fr-FR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/fr-FR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/gl-ES/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/gl-ES/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/he-IL/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/he-IL/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/hi-IN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/hi-IN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/hr-HR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/hr-HR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/hu-HU/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/hu-HU/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/id-ID/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/id-ID/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/is-IS/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/is-IS/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/it-IT/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/it-IT/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ja-JP/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ja-JP/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ka-GE/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ka-GE/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/kk-KZ/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/kk-KZ/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/km-KH/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/km-KH/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/kn-IN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/kn-IN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ko-KR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ko-KR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/lo-LA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/lo-LA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/lt-LT/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/lt-LT/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/lv-LV/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/lv-LV/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/mk-MK/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/mk-MK/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ml-IN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ml-IN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ms-MY/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ms-MY/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/nb-NO/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/nb-NO/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/nl-NL/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/nl-NL/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/nn-NO/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/nn-NO/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/pl-PL/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/pl-PL/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/pt-BR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/pt-BR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/pt-PT/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/pt-PT/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ro-RO/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ro-RO/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ru-RU/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ru-RU/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sk-SK/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sk-SK/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sl-SI/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sl-SI/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sq-AL/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sq-AL/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sr-Latn-RS/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sr-Latn-RS/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sv-SE/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sv-SE/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/sw-KE/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/sw-KE/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/ta-IN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/ta-IN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/te-IN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/te-IN/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/th-TH/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/th-TH/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/tr-TR/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/tr-TR/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/uk-UA/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/uk-UA/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/uz-Latn-UZ/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/uz-Latn-UZ/ModernWpf.resources.dll",
+        "lib/netcoreapp3.0/vi-VN/ModernWpf.Controls.resources.dll",
+        "lib/netcoreapp3.0/vi-VN/ModernWpf.resources.dll",
+        "modernwpfui.0.9.6.nupkg.sha512",
+        "modernwpfui.nuspec",
+        "readme.txt"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -138,11 +1703,275 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+      "type": "package",
+      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net461/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net5.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net5.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory.Data/1.0.2": {
+      "sha512": "JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
+      "type": "package",
+      "path": "system.memory.data/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "DotNetPackageIcon.png",
+        "README.md",
+        "lib/net461/System.Memory.Data.dll",
+        "lib/net461/System.Memory.Data.xml",
+        "lib/netstandard2.0/System.Memory.Data.dll",
+        "lib/netstandard2.0/System.Memory.Data.xml",
+        "system.memory.data.1.0.2.nupkg.sha512",
+        "system.memory.data.nuspec"
+      ]
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Encodings.Web/8.0.0": {
+      "sha512": "yev/k9GHAEGx2Rg3/tU6MQh4HGBXJs70y7j1LaM1i/ER9po+6nnQ6RRqTJn1E7Xu0fbIFK80Nh5EoODxrbxwBQ==",
+      "type": "package",
+      "path": "system.text.encodings.web/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net6.0/System.Text.Encodings.Web.dll",
+        "lib/net6.0/System.Text.Encodings.Web.xml",
+        "lib/net7.0/System.Text.Encodings.Web.dll",
+        "lib/net7.0/System.Text.Encodings.Web.xml",
+        "lib/net8.0/System.Text.Encodings.Web.dll",
+        "lib/net8.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.8.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/8.0.0": {
+      "sha512": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+      "type": "package",
+      "path": "system.text.json/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net6.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/net7.0/System.Text.Json.dll",
+        "lib/net7.0/System.Text.Json.xml",
+        "lib/net8.0/System.Text.Json.dll",
+        "lib/net8.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.8.0.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "Azure.AI.FormRecognizer >= 4.1.0",
       "CsvHelper >= 32.0.3",
+      "Microsoft.Extensions.Configuration >= 8.0.0",
+      "Microsoft.Extensions.Configuration.Json >= 8.0.0",
+      "ModernWpfUI >= 0.9.6",
       "Newtonsoft.Json >= 13.0.3",
       "iTextSharp >= 5.5.13.3"
     ]
@@ -191,9 +2020,25 @@
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows",
         "dependencies": {
+          "Azure.AI.FormRecognizer": {
+            "target": "Package",
+            "version": "[4.1.0, )"
+          },
           "CsvHelper": {
             "target": "Package",
             "version": "[32.0.3, )"
+          },
+          "Microsoft.Extensions.Configuration": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "Microsoft.Extensions.Configuration.Json": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "ModernWpfUI": {
+            "target": "Package",
+            "version": "[0.9.6, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

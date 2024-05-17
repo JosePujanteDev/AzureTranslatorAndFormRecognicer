@@ -1,9 +1,12 @@
-﻿using AzureTraductor.Core;
+﻿using Azure;
+using Azure.AI.FormRecognizer.DocumentAnalysis;
+using AzureTraductor.Core;
 using AzureTraductor.MVVM.Model;
 using CsvHelper;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -12,6 +15,7 @@ using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -73,6 +77,12 @@ namespace AzureTraductor.MVVM.ViewModel
         public ICommand SelectFileCommand { get; }
         public ICommand TranslateCommandPdf { get; }
 
+        private readonly string formRecognizerEndpoint;
+        private readonly string formRecognizerApiKey;
+        private readonly string translatorEndpoint;
+        private readonly string translatorSubscriptionKey;
+        private readonly string translatorRegion;
+
         public MainVM()
         {
             Languages = new ObservableCollection<Language>();
@@ -86,6 +96,18 @@ namespace AzureTraductor.MVVM.ViewModel
             TranslateCommand = new RelayCommand(async o => await CheckText());
             SelectFileCommand = new RelayCommand(SelectFile);
             TranslateCommandPdf = new RelayCommand(async e => await TranslatePdf());
+
+            // Cargar configuraciones desde appsettings.json
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            formRecognizerEndpoint = configuration["Azure:FormRecognizer:Endpoint"];
+            formRecognizerApiKey = configuration["Azure:FormRecognizer:ApiKey"];
+            translatorEndpoint = configuration["Azure:Translator:Endpoint"];
+            translatorSubscriptionKey = configuration["Azure:Translator:SubscriptionKey"];
+            translatorRegion = configuration["Azure:Translator:Region"];
         }
 
         private async Task CheckText()
@@ -106,12 +128,7 @@ namespace AzureTraductor.MVVM.ViewModel
             }
         }
 
-        // Variables requeridas para Azure Translate
-        private static readonly string key = "559f53aa6f8e48169c904c030f20cfa7";
-        private static readonly string endpoint = "https://api.cognitive.microsofttranslator.com/";
-        private static readonly string location = "eastus";
-
-        // Metodo traductor de texto
+        // Método traductor de texto
         public async Task<(string translatedText, string originalText)> TranslateText(string textToTranslate, string fromLanguage, string toLanguage)
         {
             string route = $"/translate?api-version=3.0&from={fromLanguage}&to={toLanguage}";
@@ -122,10 +139,10 @@ namespace AzureTraductor.MVVM.ViewModel
             using (var request = new HttpRequestMessage())
             {
                 request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(endpoint + route);
+                request.RequestUri = new Uri(translatorEndpoint + route);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", key);
-                request.Headers.Add("Ocp-Apim-Subscription-Region", location);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", translatorSubscriptionKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Region", translatorRegion);
 
                 HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
                 string result = await response.Content.ReadAsStringAsync();
@@ -152,22 +169,17 @@ namespace AzureTraductor.MVVM.ViewModel
         {
             if (!string.IsNullOrWhiteSpace(SelectedFilePath))
             {
+                TranslatedTextPdf = "Translating PDF...";
+
                 string targetFilePath = System.IO.Path.ChangeExtension(SelectedFilePath, "_translated.pdf");
 
                 try
                 {
-                    // Extraer texto del PDF
-                    StringBuilder text = new StringBuilder();
-                    using (PdfReader reader = new PdfReader(SelectedFilePath))
-                    {
-                        for (int i = 1; i <= reader.NumberOfPages; i++)
-                        {
-                            text.Append(PdfTextExtractor.GetTextFromPage(reader, i));
-                        }
-                    }
+                    // Extraer texto del PDF usando Azure Form Recognizer
+                    string extractedText = await ExtractTextFromFileAsync(SelectedFilePath);
 
-                    string detectedLanguage = await DetectLanguage(text.ToString());
-                    (string translatedText, string originalText) = await TranslateText(text.ToString(), detectedLanguage, SelectedToLanguagePdf.Code);
+                    string detectedLanguage = await DetectLanguage(extractedText);
+                    (string translatedText, string originalText) = await TranslateText(extractedText, detectedLanguage, SelectedToLanguagePdf.Code);
 
                     using (FileStream fs = new FileStream(targetFilePath, FileMode.Create))
                     {
@@ -192,6 +204,26 @@ namespace AzureTraductor.MVVM.ViewModel
             }
         }
 
+        private async Task<string> ExtractTextFromFileAsync(string filePath)
+        {
+            var client = new DocumentAnalysisClient(new Uri(formRecognizerEndpoint), new AzureKeyCredential(formRecognizerApiKey));
+            using var stream = new FileStream(filePath, FileMode.Open);
+            var operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed, "prebuilt-document", stream);
+            var result = operation.Value;
+
+            StringBuilder extractedText = new StringBuilder();
+            foreach (var page in result.Pages)
+            {
+                foreach (var line in page.Lines)
+                {
+                    extractedText.AppendLine(line.Content);
+                }
+            }
+
+            TranslatedTextPdf = "Text extracted successfully";
+            return extractedText.ToString();
+        }
+
         private async Task<string> DetectLanguage(string text)
         {
             string route = "/detect?api-version=3.0";
@@ -202,10 +234,10 @@ namespace AzureTraductor.MVVM.ViewModel
             using (var request = new HttpRequestMessage())
             {
                 request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(endpoint + route);
+                request.RequestUri = new Uri(translatorEndpoint + route);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", key);
-                request.Headers.Add("Ocp-Apim-Subscription-Region", location);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", translatorSubscriptionKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Region", translatorRegion);
 
                 HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
                 string result = await response.Content.ReadAsStringAsync();

@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Programacion\\CSharp\\AzureTraductor\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E2AB6A0-4023-4910-A96C-38767BF9F9F6}|AzureTraductor.csproj|d:\\programacion\\csharp\\azuretraductor\\mvvm\\viewmodel\\mainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E2AB6A0-4023-4910-A96C-38767BF9F9F6}|AzureTraductor.csproj|solutionrelative:mvvm\\viewmodel\\mainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E2AB6A0-4023-4910-A96C-38767BF9F9F6}|AzureTraductor.csproj|d:\\programacion\\csharp\\azuretraductor\\mvvm\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E2AB6A0-4023-4910-A96C-38767BF9F9F6}|AzureTraductor.csproj|solutionrelative:mvvm\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Programacion\\CSharp\\AzureTraductor\\MVVM\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MVVM\\View\\MainWindow.xaml",
+              "ToolTip": "D:\\Programacion\\CSharp\\AzureTraductor\\MVVM\\View\\MainWindow.xaml",
+              "RelativeToolTip": "MVVM\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-17T15:42:39.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainVM.cs",
+              "DocumentMoniker": "D:\\Programacion\\CSharp\\AzureTraductor\\MVVM\\ViewModel\\MainVM.cs",
+              "RelativeDocumentMoniker": "MVVM\\ViewModel\\MainVM.cs",
+              "ToolTip": "D:\\Programacion\\CSharp\\AzureTraductor\\MVVM\\ViewModel\\MainVM.cs",
+              "RelativeToolTip": "MVVM\\ViewModel\\MainVM.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAuwEQAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T15:42:35.575Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -7,15 +7,17 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Icon="\AzureTraductor;component\Resources\translateicon.ico"
-        Title="Translator" Height="450" Width="800">
+        Title="Translator" Height="450" Width="800"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
 
     <Window.DataContext>
         <viewmodel:MainVM/>
     </Window.DataContext>
 
-    <Grid>
+    <Grid Background="Gray">
         <TabControl>
-            <TabItem Header="Translate text">
+            <TabItem Header="Text Tanslator">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -28,8 +30,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <ComboBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedFromLanguage}" Margin="5"/>
-                    <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedToLanguage}" Margin="5"/>
+                    <ComboBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedFromLanguage}" Margin="5"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedToLanguage}" Margin="5"/>
 
                     <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding TextToTranslate}" Margin="5" Height="100" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
 
@@ -39,7 +41,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Translate pdf">
+            <TabItem Header="Pdf Translator">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -61,7 +63,7 @@
                         <Button Content="Select File" Command="{Binding SelectFileCommand}" HorizontalAlignment="Center" Margin="0,10,5,5"/>
                         <Button Content="Translate" Command="{Binding TranslateCommandPdf}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="5,10,0,5"/>
 
-                        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedToLanguage}" Margin="5"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" ItemsSource="{Binding Languages}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedToLanguagePdf}" Margin="5"/>
 
                     </Grid>
 
