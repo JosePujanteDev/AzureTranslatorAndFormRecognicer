@@ -40,8 +40,9 @@ Azure Translator App is a translation application built using C# and Azure servi
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
+---
 ---
 
 **README - Español**
@@ -86,4 +87,4 @@ La Aplicación de Traductor de Azure es una aplicación de traducción construid
 
 ## Licencia
 
-Este proyecto está bajo la [Licencia MIT](LICENSE).
+Este proyecto está bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
