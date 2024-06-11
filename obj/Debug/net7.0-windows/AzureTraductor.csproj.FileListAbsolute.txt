@@ -173,3 +173,6 @@ D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\System.Text.Encod
 D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\System.Text.Json.dll
 D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\appsettings.json
+D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\System.Drawing.Common.dll
+D:\Programacion\CSharp\AzureTraductor\bin\Debug\net7.0-windows\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll

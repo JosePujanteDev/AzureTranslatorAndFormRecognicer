@@ -89,9 +89,9 @@ namespace AzureTraductor.MVVM.ViewModel
             LoadLanguagesFromCsv("Resources\\LanguagesList.csv");
 
             // Idiomas por defecto
-            SelectedFromLanguage = Languages[109]; // Spanish
-            SelectedToLanguage = Languages[27]; // English
-            SelectedToLanguagePdf = Languages[27]; // English
+            SelectedFromLanguage = Languages[109]; // Español
+            SelectedToLanguage = Languages[27]; // Ingles
+            SelectedToLanguagePdf = Languages[27]; // Ingles
 
             TranslateCommand = new RelayCommand(async o => await CheckText());
             SelectFileCommand = new RelayCommand(SelectFile);
